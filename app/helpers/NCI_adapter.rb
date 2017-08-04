@@ -16,6 +16,7 @@ module NCIClinicalTrials
     request["postman-token"] = '8c267558-8d17-6b4f-d0e6-a29054fef45e'
 
     response = http.request(request)
+    response.read_body
   end
 
 end
