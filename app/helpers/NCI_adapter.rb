@@ -13,7 +13,7 @@ module NCIClinicalTrials
 
     request = Net::HTTP::Get.new(url)
     request["cache-control"] = 'no-cache'
-    request["postman-token"] = 'a0993ea2-f4c2-fb35-7c63-3ae82d91e94b'
+    request["postman-token"] = '8c267558-8d17-6b4f-d0e6-a29054fef45e'
 
     response = http.request(request)
   end

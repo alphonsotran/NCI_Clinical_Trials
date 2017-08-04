@@ -1,10 +1,15 @@
+require 'json'
+
+
 get '/nci' do
 
-  @repo = NCIClinicalTrials.clinical_trial_search(params[:state])
-  data= JSON.parse(@repo[:trials][0][:sites])
-  @repo_names = []
+  @clinics = NCIClinicalTrials.clinical_trial_search(params[:state])
+
+  data= JSON.parse(@clinics)#[:trials][0][:sites])
+  p data
+  @clinical_sites = []
   data.each do |hash|
-      @repo_names << hash["name"]
+      @clinical_sites << hash
    end
    p params
    erb :'NCI/show'
