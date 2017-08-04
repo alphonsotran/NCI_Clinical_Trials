@@ -1,17 +1,15 @@
-<h1>Repo test</h1>
-
-<% @data["trials"][0]["sites"][0..10].each do |repo| %>
-  <ul>
-    <li><%= "#{repo["org_coordinates"]}"%></li>
-  </ul>
-<% end %>
-
-
-results = []
-
-
-coordinates = repo["org_coordinates"]
-results << coordinates
+<div class="results">
+<h1>Results</h1>
+  <% @sites.each do |site| %>
+    <ul>
+      <li>
+        <p><%= "#{site["org_address_line_1"]}"%></p>
+        <p><%= "#{site["org_address_line_2"]}"%></p>
+        <p><%= "#{site["org_phone"]}"%></p>
+      </li>
+    </ul>
+  <% end %>
+</div>
 
 
-results
+
